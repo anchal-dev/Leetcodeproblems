@@ -1,0 +1,21 @@
+class Solution {
+public:
+    bool checkDivisibility(int n) {
+      int sum = 0;
+         int mul = 1;
+         int num =n;
+
+       while (n > 0) {
+        sum += n % 10;
+         mul = mul *(n%10);
+        n /= 10;
+    }
+
+
+    int ans = mul + sum;
+    if((num % ans) == 0){
+        return true;
+    }
+        return false;
+    }
+};
