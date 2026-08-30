@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int minimumDeletions(vector<int>& nums) {
+        int n= nums.size();
+        int maxindex = max_element(nums.begin(), nums.end())-nums.begin();
+        int minindex = min_element(nums.begin(), nums.end())-nums.begin();
+
+        int a = min(minindex, maxindex);
+        int b = max(minindex, maxindex);
+
+        int ans =min({b+1, n-a,a+1+(n-b)});
+        return ans;
+
+    }
+};
